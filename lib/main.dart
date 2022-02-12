@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mycv/color.dart';
 import 'package:mycv/landing.dart';
+import 'configure/nonweb.dart' if (dart.library.html) 'configure/web.dart';
 
 void main() {
+  configureApp();
   runApp(MyApp());
 }
 
@@ -10,15 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Wahyudin',
+      title: 'Hi, I am Wahyudin',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: primarySwatchColor,
       ),
-      initialRoute: 'home',
+      initialRoute: 'index',
       home: LandingPage(),
       routes: {
-        'home': (BuildContext context) => LandingPage(),
+        'index': (BuildContext context) => LandingPage(),
       },
     );
   }
